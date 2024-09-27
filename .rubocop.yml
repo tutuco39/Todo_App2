@@ -8,7 +8,7 @@
 #   Enabled: false
 
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.2.5
   DisabledByDefault: true
   Exclude:
     - db/schema.rb
