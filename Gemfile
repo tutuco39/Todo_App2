@@ -23,8 +23,9 @@ gem 'jbuilder'
 # gem "kredis"
 
 gem 'devise'
-gem 'sassc-rails'
 gem 'annotate'
+gem 'sassc-rails'
+
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
