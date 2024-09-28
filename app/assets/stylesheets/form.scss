@@ -1,11 +1,11 @@
 @import "variables";
 
 input {
-    margin: 5px 0px;
-    padding: 10px 24px;
-    border: none;
-    border-radius: 5px;
-  }
+  margin: 5px 0px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: $border-radius;
+}
 
 .field {
   padding: 14px 0;
@@ -18,8 +18,21 @@ label {
   text-align: left;
 }
 
-.textarea {
-  width: 362px;
+.text {
+  margin: 5px 0px;
+  padding: 10px 24px;
+  border: none;
+  width: $width;
+  background: $base-bg-color;
+}
+
+ textarea {
+  margin: 5px 0px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: $border-radius;
+  width: $width;
+  min-height: 300px;
   background: $base-bg-color;
 }
 
