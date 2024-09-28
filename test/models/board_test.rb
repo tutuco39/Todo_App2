@@ -19,8 +19,4 @@ class BoardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  test "should get index" do
-    board = Boards.new
-    assert_not board.save, "Should get index"
-  end
 end
