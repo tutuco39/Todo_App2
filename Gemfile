@@ -23,6 +23,7 @@ gem 'jbuilder'
 
 gem 'annotate'
 gem 'devise'
+gem 'faker'
 gem 'sassc-rails'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
