@@ -1,11 +1,12 @@
 @import 'variables';
 
 .btn-primary {
-  width: 362px;
+  width: $width;
   font-weight: bold;
   color: white;
   font-size: $font-size;
   background: $primary-color;
   margin-top: 150px;
 }
+
 
