@@ -11,11 +11,9 @@
 jack = User.create!(
   email: 'dummy1@example.com', password: 'password1'
 )
-
 emi = User.create!(
   email: 'dummy2@example.com', password: 'password2'
 )
-
 mike = User.create!(
   email: 'dummy3@example.com', password: 'password3'
 )
