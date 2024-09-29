@@ -1,0 +1,42 @@
+@import 'variables';
+
+.card {
+  background-color: $base-bg-color;
+  border-radius: $border-radius;
+  margin: 20px 0;
+  width: $width;
+  font-size: $font-size;
+
+  &_new {
+    width: $width;
+    text-align: center;
+    border: dashed 1px $base-bg-color;
+  }
+
+  &_inner {
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  &_title {
+    text-decoration: none;
+    // 1行で表示させて、続きは「・・・」にする
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &_description {
+    color: $text-second-base-color;
+    // 1行で表示させて、続きは「・・・」にする
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: $font-size - 2 ;
+  }
+}
+
+.flex {
+  display: flex;
+}
+

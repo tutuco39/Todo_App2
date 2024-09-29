@@ -17,6 +17,7 @@ class BoardsController < ApplicationController
   end
 
   def index
+    @boards = Board.all
   end
 
   private

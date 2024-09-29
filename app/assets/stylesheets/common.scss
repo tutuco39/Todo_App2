@@ -1,0 +1,36 @@
+@import 'variables';
+
+.dropbtn{
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: $text-second-base-color;
+}
+
+.dropdown_content {
+  font-weight: normal;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  min-width: 60px;
+  background-color: #fff;
+  color: $base-bg-color;
+  font-size: $font-size - 3 ;
+  border-radius: 10px;
+
+  a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+
+
+}
