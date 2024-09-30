@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :boards
+  resource :profile, only: [:edit, :update]
+
 
   root to: 'boards#index'
 

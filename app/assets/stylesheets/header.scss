@@ -1,11 +1,22 @@
 @import "variables";
 
+$avatar-size: 40px;
+
 .logo {
   font-family: Avenir;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 24.59px;
-  text-align: left;
+}
+
+.header {
+  width: $width;
+  display: flex;
+  justify-content: space-between;
+
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+  }
 }
 
 .line {

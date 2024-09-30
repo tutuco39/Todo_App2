@@ -11,9 +11,14 @@
           <div class="card_title">
             <%= link_to board.title, board_path(board) %>
           </div>
-          <br/>
           <div class="card_description">
             <%= board.description %>
+          </div>
+
+          <%# アバター表示実装まで仮表示 %>
+          <%# アバターはタイトル・本文とレイヤーを分ける %>
+          <div class="avatar board_name">
+            <p>user_id:<%= board.user_id %></p>
           </div>
         </div>
 
@@ -25,13 +30,12 @@
           </div>
         </div>
       </div>
-
     </div>
   <% end %>
+
     <div class="card_new">
       <%= link_to '+ Add new board', new_board_path %>
     </div>
-
 </div>
 
 
