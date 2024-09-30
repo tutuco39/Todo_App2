@@ -19,9 +19,15 @@
 
   <header>
     <div class="container">
-      <%= link_to "Boards", root_path, class: "logo" %>
+      <div class="header">
+        <%= link_to "Boards", root_path, class: "logo" %>
+
+        <%# アバター表示実装まで仮表示 %>
+        <%= link_to "my", edit_profile_path, class: "header_avatar" %>
+      </div>
     </div>
-      <div class="line"></div>
+
+    <div class="line"></div>
   </header>
 
   <body>
