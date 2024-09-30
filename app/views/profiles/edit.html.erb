@@ -1,0 +1,20 @@
+<div class="container">
+  <%= form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f| %>
+    <div class="field">
+      <%= f.label :User_Name %><br />
+      <%= f.text_field :user_name, placeholder: current_user.user_name, class: "text" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Department %><br />
+      <%= f.text_field :department, placeholder: current_user.department, class: "text" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Avatar %><br />
+      <%= f.file_field :avatar %>
+    </div>
+
+    <%= f.submit '更新', class: 'btn-primary' %>
+  <% end %>
+</div>
