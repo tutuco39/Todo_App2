@@ -1,30 +1,30 @@
 <div class="container">
-  <h2>All Boards</h2>
+  <h2>Boards_name（仮）</h2>
 
-  <% @boards.each do |board| %>
+  <% @tasks.each do |task| %>
     <div class="card">
       <div class="flex">
         <div class="card_inner">
           <div class="card_title">
-            <%= link_to board.name, board_tasks_path(board) %>
+            <%= link_to task.title, board_tasks_path(@board) %>
           </div>
           <div class="card_description">
-            <%= board.description %>
+            <%= task.description %>
           </div>
 
           <%# アバター表示実装まで仮表示 %>
           <%# アバターはタイトル・本文とレイヤーを分ける %>
           <div class="avatar board_name">
-            <p>user_id:<%= board.user_id %></p>
+            <p>user_id:<%= task.user_id %></p>
           </div>
         </div>
 
-        <% if user_signed_in? && current_user.has_written?(board) %>
+        <% if user_signed_in? && current_user.has_written?(task) %>
           <div class="dropdown">
             <i class="fa-solid fa-ellipsis dropbtn"></i>
             <div class="dropdown_content">
-              <%= link_to 'Edit', edit_board_path(board) %>
-              <%= link_to 'Delete', board_path(board),
+              <%= link_to 'Edit', edit_board_task_path(task) %>
+              <%= link_to 'Delete', board_task_path(task),
               data: { turbo_method: :delete, turbo_confirm: '本当に削除してもいいですか？' } %>
             </div>
           </div>
@@ -34,10 +34,6 @@
   <% end %>
 
     <div class="card_new">
-      <%= link_to '+ Add new board', new_board_path %>
+      <%= link_to '+ Add new card', new_board_task_path(@board) %>
     </div>
 </div>
-
-
-
-
