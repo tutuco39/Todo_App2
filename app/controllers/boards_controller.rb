@@ -7,6 +7,7 @@ class BoardsController < ApplicationController
 
   def create
     @board = current_user.boards.build(board_params)
+    @board.user = current_user
     if @board.save
       redirect_to boards_path,
                   notice: 'Boardを作成しました'
