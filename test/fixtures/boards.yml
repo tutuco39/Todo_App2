@@ -15,9 +15,9 @@
 #
 
 one:
-  title: MyString
+  name: MyString
   description: MyText
 
 two:
-  title: MyString
+  name: MyString
   description: MyText
