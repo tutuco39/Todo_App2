@@ -4,6 +4,7 @@
 @import 'card';
 @import 'header';
 @import 'common';
+@import 'flash';
 
 
 html {
@@ -43,4 +44,8 @@ h2 {
 a {
   text-decoration: none;
   color: $text-base-color;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

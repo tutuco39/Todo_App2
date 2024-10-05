@@ -1,0 +1,18 @@
+<div class="container">
+
+  <%= render 'common', profile: @profile %>
+
+  <%= form_with(model: @profile, url: profile_path, method: 'post', local: true) do |f| %>
+    <div class="field">
+      <%= f.label :avatar %><br />
+      <%= f.file_field :avatar %>
+    </div>
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <%end%>
+
+  <%= link_to "Sign out", destroy_user_session_path,
+  data: { method: 'delete' }, class: 'btn-secondary' %>
+
+</div>
+
+
