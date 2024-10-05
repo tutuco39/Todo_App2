@@ -3,8 +3,13 @@
 
   <% @tasks.each do |task| %>
     <div class="card">
+      <% if task.eyecatch.attached? %>
+      <div class="card_image">
+        <%= image_tag task.eyecatch %>
+      </div>
+      <% end %>
       <div class="flex">
-        <div class="card_inner">
+        <div class="card_inner_task">
           <div class="card_title">
             <%= link_to task.title, board_tasks_path(@board) %>
           </div>

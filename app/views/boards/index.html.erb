@@ -4,7 +4,7 @@
   <% @boards.each do |board| %>
     <div class="card">
       <div class="flex">
-        <div class="card_inner">
+        <div class="card_inner_board">
           <div class="card_title">
             <%= link_to board.name, board_tasks_path(board) %>
           </div>
