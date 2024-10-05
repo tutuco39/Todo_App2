@@ -25,16 +25,8 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_one :profile, dependent: :destroy
 
-  def prepare_profile
-    profile || build_profile
-  end
-
-  def department
-    profile.department || "未登録"
-  end
-
-  def user_name
-    profile.user_name || self.email.split('@').first
+  def has_written?(board)
+    boards.exists?(id: board.id)
   end
 
 end

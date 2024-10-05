@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  description :text
-#  title       :string
+#  name        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :bigint           not null
@@ -14,7 +14,7 @@
 #  index_boards_on_user_id  (user_id)
 #
 class Board < ApplicationRecord
-  validates :title, presence: true
+  validates :name, presence: true
   validates :description, presence: true
 
   belongs_to :user

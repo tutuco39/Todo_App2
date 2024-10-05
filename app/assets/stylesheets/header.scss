@@ -11,6 +11,7 @@ $avatar-size: 40px;
   width: $width;
   display: flex;
   justify-content: space-between;
+  line-height: 40px;
 
   &_avatar {
     width: $avatar-size;

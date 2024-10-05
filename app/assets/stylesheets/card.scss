@@ -18,11 +18,13 @@ $card_height: 170px;
   &_new {
     width: $width;
     height: $card_height;
-    // 高さの位置がおかしいので修正する
-    padding: 80px 0;
     text-align: center;
     border-radius: $border-radius;
     border: dashed 2px $base-bg-color;
+
+    a {
+      line-height: $card_height;
+    }
   }
 
   &_inner {

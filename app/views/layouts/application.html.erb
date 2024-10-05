@@ -23,12 +23,27 @@
         <%= link_to "Boards", root_path, class: "logo" %>
 
         <%# アバター表示実装まで仮表示 %>
-        <%= link_to "my", edit_profile_path, class: "header_avatar" %>
+        <% if user_signed_in? %>
+          <% if current_user.profile&.avatar&.attached? %>
+            <%= image_tag current_user.profile.avatar, edit_profile_path(@profile), class: "header_avatar" %>
+          <% else %>
+            <%= link_to "my", new_profile_path, class: "header_avatar" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
-
     <div class="line"></div>
   </header>
+
+  <% if flash.present? %>
+    <div class="container">
+      <div class="flash">
+      <% flash.each do |key, value| %>
+        <div class="<%= key %>"><%= value %></div>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
 
   <body>
     <%= yield %>
