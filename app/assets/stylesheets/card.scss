@@ -1,13 +1,12 @@
 @import 'variables';
 
-$card_height: 170px;
+$card_height: 315px;
 
 .card {
   background-color: $base-bg-color;
   border-radius: $border-radius;
   margin: 20px 0;
   width: $width;
-  height: $card_height;
   font-size: $font-size;
 
   i {
@@ -17,23 +16,30 @@ $card_height: 170px;
 
   &_new {
     width: $width;
-    height: $card_height;
+    font-family: $font-family;
     text-align: center;
     border-radius: $border-radius;
     border: dashed 2px $base-bg-color;
 
     a {
-      line-height: $card_height;
+      line-height: $card_height / 2;
     }
   }
 
-  &_inner {
+  &_inner_board {
     padding: 30px 20px;
+    width: 90%;
+  }
+
+  &_inner_task {
+    padding: 15px 20px;
     width: 90%;
   }
 
   &_title {
     text-decoration: none;
+    font-weight: bold;
+    font-family: $font-family;
     // 1行で表示させて、続きは「・・・」にするコード
     overflow: hidden;
     text-overflow: ellipsis;
@@ -41,6 +47,7 @@ $card_height: 170px;
   }
 
   &_description {
+    font-family: $font-family;
     margin-top: 10px;
     color: $text-second-base-color;
     // 1行で表示させて、続きは「・・・」にするコード
@@ -48,6 +55,21 @@ $card_height: 170px;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: $font-size - 2 ;
+  }
+
+  &_image {
+
+    img {
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // -webkit-transform: translate(-50%, -50%);
+      // -ms-transform: translate(-50%, -50%);
+      // transform: translate(-50%, -50%);
+      width: 100%;
+      padding: 15px 15px 0 15px;
+      // border-radius: $border-radius;
+    }
   }
 }
 
@@ -58,5 +80,5 @@ $card_height: 170px;
 // アバターの代わりにid表示中　そのうち削除
 .board_name {
   font-size: 12px;
-  padding: 20px 0;
+  padding-top: 20px;
 }
