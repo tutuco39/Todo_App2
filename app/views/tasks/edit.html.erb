@@ -1,5 +1,31 @@
 <div class="container">
     <h2>Edit Card</h2>
 
-<%= render 'form', task: @task %>
+    <%= render 'errors_message', task: @task %>
+
+  <%= form_with(model: @task, url: board_task_path(@task.board), local: true) do |f| %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, class: "text" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :deadline %><br />
+      <%= f.date_field :deadline %>
+    </div>
+
+    <div class="field">
+      <%= f.label :eyecatch %><br />
+      <%= f.file_field :eyecatch %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Submit", class: "btn-primary" %>
+    </div>
+  <% end %>
 </div>

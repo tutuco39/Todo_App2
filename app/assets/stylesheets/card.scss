@@ -1,6 +1,6 @@
 @import 'variables';
 
-$card_height: 315px;
+$card_height: 300px;
 
 .card {
   background-color: $base-bg-color;
@@ -50,11 +50,9 @@ $card_height: 315px;
     font-family: $font-family;
     margin-top: 10px;
     color: $text-second-base-color;
-    // 1行で表示させて、続きは「・・・」にするコード
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     font-size: $font-size - 2 ;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   &_image {
@@ -78,16 +76,28 @@ $card_height: 315px;
 .flex {
   width: $width;
   display: flex;
+  justify-content: space-between;
+}
 
-  &_drpdwn {
-    padding-top: 20px;
-  }
+.flex_right {
+  // padding-top: 5px;
 }
 
 // アバターの代わりにid表示中　そのうち削除
 .board_name {
   font-size: 12px;
   padding-top: 20px;
+}
+
+.card_task_description {
+  font-family: $font-family;
+  margin-top: 10px;
+  color: $text-second-base-color;
+  // 1行で表示させて、続きは「・・・」にするコード
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: $font-size - 2 ;
 }
 
 .card_inner_task_title {
@@ -102,6 +112,8 @@ $card_height: 315px;
   border-radius: $border-radius;
   margin: 20px 0;
   padding: 20px 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   width: $width;
   font-size: $font-size - 2 ;
 }
