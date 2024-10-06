@@ -30,8 +30,8 @@ class User < ApplicationRecord
     boards.exists?(id: board.id)
   end
 
-  # def has_written?(task)
-  #   tasks.exists?(id: task.id)
+  # def has_written?(board, task)
+  #   tasks.exists?(board_id: board.id, id: id)
   # end
 
 end

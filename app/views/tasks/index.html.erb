@@ -1,17 +1,18 @@
 <div class="container">
-  <h2>Boards_name（仮）</h2>
+  <h2><%= @board.name %></h2>
 
   <% @tasks.each do |task| %>
     <div class="card">
       <% if task.eyecatch.attached? %>
-      <div class="card_image">
-        <%= image_tag task.eyecatch %>
-      </div>
+        <div class="card_image">
+          <%= image_tag task.eyecatch %>
+        </div>
       <% end %>
+
       <div class="flex">
         <div class="card_inner_task">
           <div class="card_title">
-            <%= link_to task.title, board_tasks_path(@board) %>
+            <%= link_to task.title, board_task_path(@board, task) %>
           </div>
           <div class="card_description">
             <%= task.description %>
@@ -28,12 +29,13 @@
           <div class="dropdown">
             <i class="fa-solid fa-ellipsis dropbtn"></i>
             <div class="dropdown_content">
-              <%= link_to 'Edit', edit_board_task_path(task) %>
-              <%= link_to 'Delete', board_task_path(task),
+              <%= link_to 'Edit', edit_board_task_path(@board, task) %>
+              <%= link_to 'Delete', board_task_path(@board, task),
               data: { turbo_method: :delete, turbo_confirm: '本当に削除してもいいですか？' } %>
             </div>
           </div>
         <% end %>
+
       </div>
     </div>
   <% end %>
