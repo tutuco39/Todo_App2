@@ -18,11 +18,16 @@
 #
 class Task < ApplicationRecord
   validates :title, presence: true
+  validates :title, length: { minimum: 2, maximum: 15 }
+
   validates :description, presence: true
+  validates :description, length: { minimum: 2, maximum: 100 }
+
   validates :deadline, presence: true
 
   belongs_to :user
   belongs_to :board
 
   has_one_attached :eyecatch
+
 end

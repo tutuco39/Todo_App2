@@ -1,12 +1,13 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_board, only: [:index, :create]
+  before_action :set_board, only: [:index, :create, :show]
 
   def index
     @tasks = @board.tasks
   end
 
   def show
+    @task = @board.tasks.find(params[:id])
   end
 
   def new
@@ -24,6 +25,12 @@ class TasksController < ApplicationController
       flash.now[:error] = 'Taskの追加に失敗しました'
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def destroy
   end
 
   private

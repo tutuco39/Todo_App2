@@ -66,7 +66,9 @@ $card_height: 315px;
       // -webkit-transform: translate(-50%, -50%);
       // -ms-transform: translate(-50%, -50%);
       // transform: translate(-50%, -50%);
-      width: 100%;
+      width: $width;
+      height: $card_height / 2 ;
+      object-fit: cover;
       padding: 15px 15px 0 15px;
       // border-radius: $border-radius;
     }
@@ -74,11 +76,51 @@ $card_height: 315px;
 }
 
 .flex {
+  width: $width;
   display: flex;
+
+  &_drpdwn {
+    padding-top: 20px;
+  }
 }
 
 // アバターの代わりにid表示中　そのうち削除
 .board_name {
   font-size: 12px;
   padding-top: 20px;
+}
+
+.card_inner_task_title {
+  font-family: $font-family;
+  font-size: 18px;
+  margin-bottom: 16px;
+  width: 90%;
+}
+
+.card-inner_task_description {
+  background-color: $base-bg-color;
+  border-radius: $border-radius;
+  margin: 20px 0;
+  padding: 20px 10px;
+  width: $width;
+  font-size: $font-size - 2 ;
+}
+
+.card_task_image img {
+  width: $width;
+  height: $card_height / 2 ;
+  object-fit: cover;
+  // padding: 15px 15px 0 15px;
+}
+
+.card_task_deadline {
+  width: $width;
+  text-align: right;
+  font-size: $font-size - 3 ;
+}
+
+.card_comment {
+margin: 30px 0;
+font-weight: normal;
+font-family: $font-family;
 }
