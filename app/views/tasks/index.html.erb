@@ -14,7 +14,7 @@
           <div class="card_title">
             <%= link_to task.title, board_task_path(@board, task) %>
           </div>
-          <div class="card_description">
+          <div class="card_task_description">
             <%= task.description %>
           </div>
 
@@ -25,8 +25,8 @@
           </div>
         </div>
 
-        <% if user_signed_in? && current_user.has_written?(task) %>
-          <div class="dropdown">
+        <% if user_signed_in? && current_user.id == task.user.id %>
+          <div class="dropdown flex_right">
             <i class="fa-solid fa-ellipsis dropbtn"></i>
             <div class="dropdown_content">
               <%= link_to 'Edit', edit_board_task_path(@board, task) %>

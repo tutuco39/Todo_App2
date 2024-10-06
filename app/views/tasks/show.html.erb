@@ -4,16 +4,16 @@
   <%= @task.title %>
   </h2>
 
-    <%# <% if user_signed_in? && current_user.has_written?(@board, @task) %> %>
-      <div class="dropdown">
-        <i class="fa-solid fa-ellipsis dropbtn flex_drpdwn"></i>
+    <% if user_signed_in? && current_user.id == @task.user.id %>
+      <div class="dropdown flex_right">
+        <i class="fa-solid fa-ellipsis dropbtn"></i>
         <div class="dropdown_content">
           <%= link_to 'Edit', edit_board_task_path(@board, @task) %>
           <%= link_to 'Delete', board_task_path(@board, @task),
           data: { turbo_method: :delete, turbo_confirm: '本当に削除してもいいですか？' } %>
         </div>
       </div>
-    <%# <% end %> %>
+    <% end %>
 </div>
 
   <% if @task.eyecatch.attached? %>

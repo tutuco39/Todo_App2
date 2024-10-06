@@ -12,8 +12,8 @@ class BoardsController < ApplicationController
       redirect_to boards_path,
                   notice: 'Boardを作成しました'
     else
-      flash.now[:error] = 'Boardの作成に失敗しました'
-      render :new
+      flash.now[:error] = '作成に失敗しました'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -35,8 +35,8 @@ class BoardsController < ApplicationController
       redirect_to boards_path,
       notice: 'Boardを更新しました'
     else
-      flash.now[:error] = '更新できませんでした'
-      render :edit
+      flash.now[:error] = '更新に失敗しました'
+      render :edit, status: :unprocessable_entity
     end
   end
 
