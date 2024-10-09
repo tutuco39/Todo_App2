@@ -30,4 +30,14 @@
 
   <h3 class="card_comment">Comment</h3>
 
+  <%= link_to 'comment',new_board_task_comment_path(@board, @task) %>
+
+    <% @comments.each do |comment| %>
+    <div class="card">
+
+      <%# <div class="flex"> %>
+        <%# <div class="card_inner_task"> %>
+    <%= comment.content %>
+      </div>
+  <% end %>
 </div>

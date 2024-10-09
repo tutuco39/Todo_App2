@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
+  resources :boards do
+    resources :tasks do
+      resources :comments, only: [:new, :create]
+    end
+  end
+
   resource :profile, only: [:new, :create, :edit, :update, :destroy]
 
   root to: 'boards#index'
