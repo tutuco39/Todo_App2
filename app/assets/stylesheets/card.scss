@@ -24,6 +24,21 @@ $card_height: 300px;
     a {
       line-height: $card_height / 2;
     }
+
+    &_comment {
+    width: $width;
+    font-family: $font-family;
+    font-size: $font-size - 2 ;
+    text-align: center;
+    border-radius: $border-radius;
+    border: dashed 2px $base-bg-color;
+    margin-top: 30px;
+
+      a {
+        line-height: $card_height / 5;
+
+      }
+    }
   }
 
   &_inner_board {
@@ -131,8 +146,31 @@ $card_height: 300px;
   font-size: $font-size - 3 ;
 }
 
-.card_comment {
+.card_comment_title {
 margin: 30px 0;
 font-weight: normal;
 font-family: $font-family;
+}
+
+.card_comment {
+}
+
+.card_comment_flex {
+  display: flex;
+  width: $width;
+  margin: 10px 0;
+}
+
+.comment_icon {
+  width: 15%;
+}
+
+.card_inner_comment {
+  width: 85%;
+  font-size: $font-size - 4 ;
+}
+
+.flex_avatar_count {
+  display: flex;
+  // justify-content: space-between;
 }

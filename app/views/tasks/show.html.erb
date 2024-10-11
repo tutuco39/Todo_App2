@@ -28,16 +28,21 @@
   <p>〜<%= @task.deadline %></p>
   </div>
 
-  <h3 class="card_comment">Comment</h3>
-
-  <%= link_to 'comment',new_board_task_comment_path(@board, @task) %>
-
+  <h3 class="card_comment_title">Comment</h3>
+  <div class="card_comment">
     <% @comments.each do |comment| %>
-    <div class="card">
-
-      <%# <div class="flex"> %>
-        <%# <div class="card_inner_task"> %>
-    <%= comment.content %>
+      <div class="card_comment_flex">
+        <div class="comment_icon">icon</div>
+        <div class="card_inner_comment">
+          <%= comment.content %>
+        </div>
       </div>
-  <% end %>
+    <% end %>
+  </div>
+
+
+
+    <div class="card_new_comment">
+      <%= link_to '+ Add new comment', new_board_task_comment_path(@board, @task) %>
+    </div>
 </div>
