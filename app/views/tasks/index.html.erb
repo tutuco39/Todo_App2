@@ -20,8 +20,13 @@
 
           <%# アバター表示実装まで仮表示 %>
           <%# アバターはタイトル・本文とレイヤーを分ける %>
-          <div class="avatar board_name">
-            <p>user_id:<%= task.user_id %></p>
+          <div class="flex_avatar_count">
+            <div class="avatar board_name">
+             <p>user_id:<%= task.user_id %></p>
+              <div class="comment_count">
+             <%= task.comment_count %><i class="fa-regular fa-comment-dots"></i>
+              </div>
+            </div>
           </div>
         </div>
 
