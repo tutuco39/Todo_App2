@@ -20,6 +20,17 @@ $avatar-size: 40px;
   }
 }
 
+.avatar {
+  width: $avatar-size - 10 ;
+  height: $avatar-size - 10 ;
+  border-radius: 100%;
+
+  &_image {
+    position: absolute;  /* 画像を絶対位置で配置 */
+    border: 2px solid white;  /* 画像間に余白をつける */
+  }
+}
+
 .line {
   width: 100%;
   height: 1px;

@@ -11,7 +11,8 @@
     <%= f.submit 'Update', class: 'btn-primary' %>
   <%end%>
 
-  <%= link_to 'Sign out', destroy_user_session_path,data: { turbo_method: :delete,
-  turbo_confirm: 'サインアウトしますか？' }, class: 'btn-secondary' %>
+  <%= link_to 'Sign out', destroy_user_session_path,
+  turbo_method: :delete,
+  class: 'btn-secondary' %>
 
 </div>

@@ -9,39 +9,31 @@
         </div>
       <% end %>
 
-      <div class="flex">
-        <div class="card_inner_task">
-          <div class="card_title">
+        <div class="card_task_inner">
+          <div class="card_task_inner_title">
             <%= link_to task.title, board_task_path(@board, task) %>
           </div>
-          <div class="card_task_description">
+          <div class="card_task_inner_description">
             <%= task.description %>
           </div>
+                </div>
 
-          <%# アバター表示実装まで仮表示 %>
-          <%# アバターはタイトル・本文とレイヤーを分ける %>
-          <div class="flex_avatar_count">
-            <div class="avatar board_name">
-             <p>user_id:<%= task.user_id %></p>
-              <div class="comment_count">
-             <%= task.comment_count %><i class="fa-regular fa-comment-dots"></i>
-              </div>
-            </div>
+        <div class="task_flex">
+          <div class="task_flex_left">
+            <% if current_user.profile&.avatar&.attached? %>
+              <%= image_tag task.user.avatar_image, class: "avatar task_flex_left_avatar" %>
+            <% end %>
+
+            <% task.comment_user_avatars.each_with_index do | avatar, index | %>
+              <%= image_tag avatar, class: "avatar avatar_image", style: "left: #{index * 20 + 20 }px;" %>
+            <% end %>
+          </div>
+          <div class="task_flex_right">
+            <%= task.comment_count %><i class="fa-regular fa-comment-dots"></i>
           </div>
         </div>
 
-        <% if user_signed_in? && current_user.id == task.user.id %>
-          <div class="dropdown flex_right">
-            <i class="fa-solid fa-ellipsis dropbtn"></i>
-            <div class="dropdown_content">
-              <%= link_to 'Edit', edit_board_task_path(@board, task) %>
-              <%= link_to 'Delete', board_task_path(@board, task),
-              data: { turbo_method: :delete, turbo_confirm: '本当に削除してもいいですか？' } %>
-            </div>
-          </div>
-        <% end %>
 
-      </div>
     </div>
   <% end %>
 

@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="flex">
-    <h2 class="card_inner_task_title">
-  <%= @task.title %>
-  </h2>
+  <div class="task_show_flex">
+    <h2 class="task_show_flex_left">
+      <%= @task.title %>
+    </h2>
 
     <% if user_signed_in? && current_user.id == @task.user.id %>
-      <div class="dropdown flex_right">
+      <div class="dropdown task_show_flex_right">
         <i class="fa-solid fa-ellipsis dropbtn"></i>
         <div class="dropdown_content">
           <%= link_to 'Edit', edit_board_task_path(@board, @task) %>
@@ -32,11 +32,15 @@
   <div class="card_comment">
     <% @comments.each do |comment| %>
       <div class="card_comment_flex">
-        <div class="comment_icon">icon</div>
-        <div class="card_inner_comment">
-          <%= comment.content %>
-        </div>
+        <% if current_user.profile&.avatar&.attached? %>
+          <%= image_tag comment.user.avatar_image, class: "avatar" %>
+        <% else %>
+          <%= board.user_id %>
+        <% end %>
+      <div class="card_inner_comment">
+        <%= comment.content %>
       </div>
+    </div>
     <% end %>
   </div>
 

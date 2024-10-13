@@ -9,9 +9,23 @@ $card_height: 300px;
   width: $width;
   font-size: $font-size;
 
-  i {
-    padding-top: 35px;
-    padding-right: 20px;
+  &_title {
+    text-decoration: none;
+    font-weight: bold;
+    font-family: $font-family;
+    // 1行で表示させて、続きは「・・・」にするコード
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &_description {
+    font-family: $font-family;
+    margin: 15px 0;
+    color: $text-second-base-color;
+    font-size: $font-size - 2 ;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   &_new {
@@ -36,7 +50,6 @@ $card_height: 300px;
 
       a {
         line-height: $card_height / 5;
-
       }
     }
   }
@@ -46,62 +59,72 @@ $card_height: 300px;
     width: 90%;
   }
 
-  &_inner_task {
+  &_task_inner {
     padding: 15px 20px;
     width: 90%;
+
+    &_title {
+      text-decoration: none;
+      font-weight: bold;
+      font-family: $font-family;
+      // 1行で表示させて、続きは「・・・」にするコード
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &_description {
+      font-family: $font-family;
+      margin: 15px 0;
+      color: $text-second-base-color;
+      font-size: $font-size - 2 ;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
   }
 
-  &_title {
-    text-decoration: none;
-    font-weight: bold;
-    font-family: $font-family;
-    // 1行で表示させて、続きは「・・・」にするコード
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
 
-  &_description {
-    font-family: $font-family;
-    margin-top: 10px;
-    color: $text-second-base-color;
-    font-size: $font-size - 2 ;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+
+
 
   &_image {
 
     img {
-      // position: absolute;
-      // top: 50%;
-      // left: 50%;
-      // -webkit-transform: translate(-50%, -50%);
-      // -ms-transform: translate(-50%, -50%);
-      // transform: translate(-50%, -50%);
       width: $width;
       height: $card_height / 2 ;
       object-fit: cover;
       padding: 15px 15px 0 15px;
-      // border-radius: $border-radius;
+      border-radius: $border-radius;
     }
   }
 }
 
-.flex {
-  width: $width;
+.board_flex{
+  display: flex;
+
+  &_inner_left {
+    padding: 30px 20px;
+    width: 95%;
+    }
+
+  &_right {
+    width: 5%;
+  }
+}
+
+.task_flex {
   display: flex;
   justify-content: space-between;
-}
+  padding: 0 20px 15px 20px;
 
-.flex_right {
-  // padding-top: 5px;
-}
+  &_left {
+    position: relative;
+  }
 
-// アバターの代わりにid表示中　そのうち削除
-.board_name {
-  font-size: 12px;
-  padding-top: 20px;
+  &_right {
+    font-size: 12px;
+    color: $text-second-base-color;
+  }
 }
 
 .card_task_description {
@@ -115,11 +138,21 @@ $card_height: 300px;
   font-size: $font-size - 2 ;
 }
 
-.card_inner_task_title {
-  font-family: $font-family;
-  font-size: 18px;
+.task_show_flex {
+  display: flex;
+  width: $width;
   margin-bottom: 16px;
   width: 90%;
+
+  &_left {
+    font-family: $font-family;
+    font-size: 18px;
+    width: 95%;
+  }
+
+  &_right {
+    width: 5%;
+  }
 }
 
 .card-inner_task_description {
@@ -137,7 +170,6 @@ $card_height: 300px;
   width: $width;
   height: $card_height / 2 ;
   object-fit: cover;
-  // padding: 15px 15px 0 15px;
 }
 
 .card_task_deadline {
@@ -152,25 +184,19 @@ font-weight: normal;
 font-family: $font-family;
 }
 
-.card_comment {
-}
-
 .card_comment_flex {
   display: flex;
   width: $width;
-  margin: 10px 0;
-}
-
-.comment_icon {
-  width: 15%;
+  margin: 20px 0;
 }
 
 .card_inner_comment {
   width: 85%;
   font-size: $font-size - 4 ;
+  padding: 0 10px;
 }
 
 .flex_avatar_count {
   display: flex;
-  // justify-content: space-between;
+  justify-content: space-between;
 }
