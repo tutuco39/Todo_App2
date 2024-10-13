@@ -3,8 +3,8 @@
 
   <% @boards.each do |board| %>
     <div class="card">
-      <div class="flex">
-        <div class="card_inner_board">
+      <div class="board_flex">
+        <div class="board_flex_inner_left">
           <div class="card_title">
             <%= link_to board.name, board_tasks_path(board) %>
           </div>
@@ -12,17 +12,19 @@
             <%= board.description %>
           </div>
 
-          <%# アバター表示実装まで仮表示 %>
           <%# アバターはタイトル・本文とレイヤーを分ける %>
-          <div class="avatar board_name">
-            <%# <%= image_tag board.user.avatar_image %> %>
-            <%# <p>user_id:<%= board.user_id %></p> %>
+          <div class="avatar">
+            <% if current_user.profile&.avatar&.attached? %>
+              <%= image_tag current_user.avatar_image, class: "avatar" %>
+            <% else %>
+              <%= board.user_id %>
+            <% end %>
           </div>
         </div>
 
         <% if user_signed_in? && current_user.has_written?(board) %>
           <div class="dropdown">
-            <i class="fa-solid fa-ellipsis dropbtn"></i>
+            <i class="fa-solid fa-ellipsis dropbtn board_flex_inner_right"></i>
             <div class="dropdown_content">
               <%= link_to 'Edit', edit_board_path(board) %>
               <%= link_to 'Delete', board_path(board),

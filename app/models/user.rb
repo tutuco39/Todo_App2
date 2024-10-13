@@ -34,8 +34,6 @@ class User < ApplicationRecord
   def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
-    else
-      'no_image'
     end
   end
 

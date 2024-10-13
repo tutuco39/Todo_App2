@@ -22,10 +22,11 @@
       <div class="header">
         <%= link_to "Boards", root_path, class: "logo" %>
 
-        <%# アバター表示実装まで仮表示 %>
         <% if user_signed_in? %>
           <% if current_user.profile&.avatar&.attached? %>
-            <%= image_tag current_user.profile.avatar, edit_profile_path(@profile), class: "header_avatar" %>
+            <%= link_to edit_profile_path(@profile) do %>
+              <%= image_tag current_user.avatar_image, class: "header_avatar" %>
+            <% end %>
           <% else %>
             <%= link_to "my", new_profile_path, class: "header_avatar" %>
           <% end %>
