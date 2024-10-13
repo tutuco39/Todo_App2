@@ -7,3 +7,43 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Faker::Config.locale = 'en'
+
+users = User.all
+boards = Board.all
+tasks = Task.all
+
+1.times do
+  User.create!(
+    email: Faker::Internet.unique.email,
+    password: 'password123',
+    password_confirmation: 'password123'
+  )
+end
+
+2.times do
+  Board.create!(
+    name: Faker::Lorem.sentence(word_count: 2),
+    description: Faker::Lorem.sentence(word_count: 4),
+    user_id: users.sample.id  # ランダムなユーザーと紐づけ
+  )
+end
+
+3.times do
+  Task.create!(
+    title: Faker::Lorem.sentence(word_count: 2),
+    description: Faker::Lorem.sentence(word_count: 25),
+    deadline: Faker::Date.forward(days: rand(1..30)),  # 1〜30日後のランダムな日付
+    user_id: users.sample.id,  # ランダムなユーザー
+    board_id: boards.sample.id  # ランダムなBoard
+  )
+end
+
+5.times do
+  Comment.create!(
+    content: Faker::Lorem.sentence(word_count: 10),
+    user_id: users.sample.id,  # ランダムなユーザーID
+    task_id: tasks.sample.id  # ランダムなTask ID
+  )
+end

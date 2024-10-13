@@ -18,10 +18,10 @@
 #
 class Task < ApplicationRecord
   validates :title, presence: true
-  validates :title, length: { minimum: 2, maximum: 15 }
+  validates :title, length: { minimum: 2, maximum: 25 }
 
   validates :description, presence: true
-  validates :description, length: { minimum: 2, maximum: 100 }
+  validates :description, length: { minimum: 2, maximum: 200 }
 
   validates :deadline, presence: true
 
