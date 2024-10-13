@@ -15,11 +15,11 @@
 #
 class Board < ApplicationRecord
   validates :name, presence: true
-  validates :name, length: { minimum: 2, maximum: 15 }
+  validates :name, length: { minimum: 2, maximum: 20 }
 
   validates :description, presence: true
-  validates :description, length: { minimum: 2, maximum: 30 }
+  validates :description, length: { minimum: 2, maximum: 50 }
 
   belongs_to :user
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 end
