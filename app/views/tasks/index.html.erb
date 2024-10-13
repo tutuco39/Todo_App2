@@ -21,7 +21,7 @@
         <div class="task_flex">
           <div class="task_flex_left">
             <% if current_user.profile&.avatar&.attached? %>
-              <%= image_tag task.user.avatar_image, class: "avatar task_flex_left_avatar" %>
+              <%= image_tag task.user.avatar_image, class: "avatar task_user_avatar" %>
             <% end %>
 
             <% task.comment_user_avatars.each_with_index do | avatar, index | %>
@@ -32,7 +32,6 @@
             <%= task.comment_count %><i class="fa-regular fa-comment-dots"></i>
           </div>
         </div>
-
 
     </div>
   <% end %>
