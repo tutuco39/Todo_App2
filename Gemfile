@@ -29,6 +29,7 @@ gem 'devise'
 gem 'faker'
 gem 'sassc-rails'
 
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -46,7 +47,7 @@ group :development, :test do
   gem 'dotenv-rails'
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
-  gem 'brakeman', require: false
+  gem 'brakeman', '~> 6.2.2', require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem 'rubocop-rails-omakase', require: false
