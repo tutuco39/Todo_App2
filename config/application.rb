@@ -7,6 +7,10 @@ require 'rails/all'
 require 'dotenv-rails'
 Dotenv::Railtie.load
 
+# Bundler.require(*Rails.groups)
+# Dotenv::Railtie.load
+
+
 module TodoApp2
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

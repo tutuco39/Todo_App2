@@ -333,7 +333,6 @@ DEPENDENCIES
   capybara
   debug
   devise
-  dotenv
   dotenv-rails
   faker
   importmap-rails
