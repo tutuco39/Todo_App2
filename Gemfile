@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'dotenv', groups: [:development, :test]
 ruby '3.2.5'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
