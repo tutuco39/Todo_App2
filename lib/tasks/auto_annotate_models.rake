@@ -56,4 +56,10 @@ if Rails.env.development?
   end
 
   Annotate.load_tasks
+
+    require 'dotenv/tasks'
+
+  task mytask: :dotenv do
+    # things that require .env
+  end
 end
