@@ -43,7 +43,7 @@ class BoardsController < ApplicationController
   def destroy
     board = Board.find(params[:id])
     board.destroy!
-    redirect_to boards_path, notice: 'Boardを削除しました'
+    redirect_to boards_path, status: :see_other, notice: '削除に成功しました'
   end
 
   private
