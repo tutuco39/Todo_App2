@@ -26,3 +26,7 @@ one: {}
 #
 two: {}
 # column: value
+
+user:
+  id: 10
+  email: user@example.com
