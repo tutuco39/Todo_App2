@@ -24,3 +24,11 @@ one: {}
 #
 two: {}
 # column: value
+
+one:
+  user: user
+  content: MyText
+
+two:
+  user: user
+  content: MyText
