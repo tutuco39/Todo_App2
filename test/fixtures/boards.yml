@@ -16,8 +16,10 @@
 
 one:
   name: MyString
+  user: user
   description: MyText
 
 two:
   name: MyString
+  user: user
   description: MyText
