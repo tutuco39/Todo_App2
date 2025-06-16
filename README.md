@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# README
 
-Things you may want to cover:
+## 現在開発中です。
+2025年6月時点、ruby・railsのアップデートに伴うバグを修正中。
 
-* Ruby version
+## タイトル
+シンプルなタスク管理アプリです。
+ユーザー登録・ログイン後に、タスクの作成、編集、削除ができます。
 
-* System dependencies
+## 主な機能
+- ユーザー登録 / ログイン / ログアウト
+- 記事のCRUD（作成・閲覧・編集・削除）
+- 記事のお気に入り登録
+- 記事へのコメント機能
+- 記事への画像投稿機能（アイキャッチ）
 
-* Configuration
+## 使用技術
+- フロントエンド:
+- バックエンド:ruby
+- データベース:
 
-* Database creation
+## 開発背景
+このプロジェクトは初学者が学びながら進めているため、時間をかけてじっくり作っています。
 
-* Database initialization
+## スクリーンショット
 
-* How to run the test suite
+### メイン画面
 
-* Services (job queues, cache servers, search engines, etc.)
+![top](./images/top.png)
 
-* Deployment instructions
+### ログイン画面
 
-* ...
+![sign in](./images/signin.png)
+
+### board作成画面
+
+![board](./images/board.png)
+
+### task作成画面
+
+![task](./images/task.png)
+
