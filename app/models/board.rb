@@ -15,7 +15,7 @@
 #
 class Board < ApplicationRecord
   validates :name, presence: true
-  validates :name, length: { minimum: 2, maximum: 20 }
+  validates :name, length: { minimum: 2, maximum: 25 }
 
   validates :description, presence: true
   validates :description, length: { minimum: 2, maximum: 50 }
