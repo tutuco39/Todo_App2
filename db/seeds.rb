@@ -14,15 +14,15 @@ users = User.all
 boards = Board.all
 tasks = Task.all
 
-1.times do
-  User.create!(
-    email: Faker::Internet.unique.email,
-    password: 'password123',
-    password_confirmation: 'password123'
-  )
-end
+# 5.times do
+#   User.create!(
+#     email: Faker::Internet.unique.email,
+#     password: 'aa1234',
+#     password_confirmation: 'aa1234'
+#   )
+# end
 
-2.times do
+5.times do
   Board.create!(
     name: Faker::Lorem.sentence(word_count: 2),
     description: Faker::Lorem.sentence(word_count: 4),
@@ -30,7 +30,7 @@ end
   )
 end
 
-3.times do
+10.times do
   Task.create!(
     title: Faker::Lorem.sentence(word_count: 2),
     description: Faker::Lorem.sentence(word_count: 25),
@@ -40,7 +40,7 @@ end
   )
 end
 
-5.times do
+20.times do
   Comment.create!(
     content: Faker::Lorem.sentence(word_count: 10),
     user_id: users.sample.id,  # ランダムなユーザーID
