@@ -1,0 +1,7 @@
+%h2 User Profile
+%ul
+  - @profile.errors.full_messages.each do |message|
+    %li= message
+.field
+  .label Email
+  .email= current_user.email

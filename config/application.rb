@@ -15,7 +15,7 @@ module TodoApp2
 
     if Rails.env.development? || Rails.env.test?
       Bundler.require(*Rails.groups)
-      Dotenv::Railtie.load
+      Dotenv::Rails.load
     end
 
     Bundler.require(*Rails.groups)
