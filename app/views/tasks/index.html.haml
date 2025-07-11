@@ -1,0 +1,23 @@
+.container
+  %h2= @board.name
+  - @tasks.each do |task|
+    .card
+      - if task.eyecatch.attached?
+        .card_image
+          = image_tag task.eyecatch
+      .card_task_inner
+        .card_task_inner_title
+          = link_to task.title, board_task_path(@board, task)
+        .card_task_inner_description
+          = task.description
+      .task_flex
+        .task_flex_left
+          - if current_user.profile&.avatar&.attached?
+            = image_tag task.user.avatar_image, class: "avatar task_user_avatar"
+          - task.comment_user_avatars.each_with_index do | avatar, index |
+            = image_tag avatar, class: "avatar avatar_image", style: "left: #{index * 20 + 20 }px;"
+        .task_flex_right
+          = task.comment_count
+          %i.fa-regular.fa-comment-dots
+  .card_new
+    = link_to '+ Add new card', new_board_task_path(@board)

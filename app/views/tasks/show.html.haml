@@ -1,0 +1,31 @@
+.container
+  .task_show_flex
+    %h2.task_show_flex_left
+      = @task.title
+    - if user_signed_in? && current_user.id == @task.user.id
+      .dropdown.task_show_flex_right
+        %i.fa-solid.fa-ellipsis.dropbtn
+        .dropdown_content
+          = link_to 'Edit', edit_board_task_path(@board, @task)
+          = link_to 'Delete', board_task_path(@board, @task),                |
+            data: { turbo_method: :delete, turbo_confirm: '本当に削除してもいいですか？' } |
+  - if @task.eyecatch.attached?
+    .card_task_image
+      = image_tag @task.eyecatch
+  .card_task_show_inner_description
+    = @task.description
+  .card_task_deadline
+    %p
+      〜#{@task.deadline}
+  %h3.card_comment_title Comment
+  .card_comment
+    - @comments.each do |comment|
+      .card_comment_flex
+        - if current_user.profile&.avatar&.attached?
+          = image_tag comment.user.avatar_image, class: "avatar"
+        - else
+          = board.user_id
+        .card_inner_comment
+          = comment.content
+  .card_new_comment
+    = link_to '+ Add new comment', new_board_task_comment_path(@board, @task)

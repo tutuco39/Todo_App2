@@ -1,0 +1,24 @@
+.container
+  %h2 All Boards
+  - @boards.each do |board|
+    .card
+      .board_flex
+        .board_flex_inner_left
+          .card_board_title
+            = link_to board.name, board_tasks_path(board)
+          .card_board_description
+            = board.description
+          .avatar
+            - if current_user.profile&.avatar&.attached?
+              = image_tag current_user.avatar_image, class: "avatar"
+            - else
+              = board.user_id
+        - if user_signed_in? && current_user.has_written?(board)
+          .dropdown
+            %i.fa-solid.fa-ellipsis.dropbtn.board_flex_inner_right
+            .dropdown_content
+              = link_to 'Edit', edit_board_path(board)
+              = link_to 'Delete', board_path(board),                             |
+                data: { turbo_method: :delete, turbo_confirm: '本当に削除してもいいですか？' } |
+  .card_new
+    = link_to '+ Add new board', new_board_path

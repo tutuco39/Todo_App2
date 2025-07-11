@@ -26,7 +26,9 @@ gem 'jbuilder'
 gem 'annotate'
 gem 'aws-sdk-s3', require: false
 gem 'devise'
+gem 'erb2haml'
 gem 'faker'
+gem 'haml-rails', '~> 2.1'
 gem 'sassc-rails'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
