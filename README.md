@@ -3,7 +3,7 @@
 
 ## タイトル
 
-シンプルなTodo管理アプリです。（完成済み）
+シンプルなTodo管理アプリです。(README編集中)
 
 
 ## 主な機能
@@ -38,30 +38,30 @@
 - タスク詳細画面では、締切、コメント一覧が表示される。
 - アバター未設定の場合、デフォルトのアバターが表示される。 
 
-<p style=vertical-align: top;">
+<div style="display: flex; vertical-align: top;">
   <img src="./images/boards.index.png" width="33%">
   <img src="./images/tasks.index.png" width="33%">
   <img src="./images/task.show.png" width="33%">
-</p>
+</div>
 
 
 ### ログイン画面
 
-<p>
-  <img src="./images/sign_up.png" width="33%" style="vertical-align: top;">
-  <img src="./images/sign_in.png" width="33%" style="vertical-align: top;">
-</p>
+<div style="display: flex; align-items: flex-start;">
+  <img src="./images/sign_up.png" width="33%">
+  <img src="./images/sign_in.png" width="33%">
+</div>
 
 
 ### 作成画面
 
 - タスク作成画面では、画像の投稿、締切の設定ができる。
 
-<p>
-  <img src="./images/add_new_board.png" width="33%" style="vertical-align: top;">
-  <img src="./images/add_new_card.png" width="33%" style="vertical-align: top;">
-  <img src="./images/add_new_comment.png" width="33%" style="vertical-align: top;">
-</p>
+<div style="display: flex; align-items: flex-start;">
+  <img src="./images/add_new_board.png" width="33%">
+  <img src="./images/add_new_card.png" width="33%">
+  <img src="./images/add_new_comment.png" width="33%">
+</div>
 
 
 
