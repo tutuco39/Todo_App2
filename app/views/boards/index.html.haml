@@ -9,10 +9,10 @@
           .card_board_description
             = board.description
           .avatar
-            - if current_user.profile&.avatar&.attached?
-              = image_tag current_user.avatar_image, class: "avatar"
+            - if board.user.profile&.avatar&.attached?
+              = image_tag board.user.avatar_image, class: "avatar"
             - else
-              = board.user_id
+              = image_tag 'default-avatar.png', class: "avatar"
         - if user_signed_in? && current_user.has_written?(board)
           .dropdown
             %i.fa-solid.fa-ellipsis.dropbtn.board_flex_inner_right
