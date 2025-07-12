@@ -24,7 +24,8 @@
               = link_to edit_profile_path(@profile) do
                 = image_tag current_user.avatar_image, class: "header_avatar"
             - else
-              = link_to "my", new_profile_path, class: "header_avatar"
+              = link_to new_profile_path do
+                = image_tag 'default-avatar.png', class: "header_avatar"
       .line
     - if flash.present?
       .container
