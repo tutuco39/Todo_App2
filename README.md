@@ -24,27 +24,31 @@
 ## スクリーンショット
 
 ### メイン画面
+- ログイン後、ボード一覧と、作成者のアバターが表示される。
+- ボードをクリックすると、タスク一覧、コメントしているユーザーのアバターも表示される。
+- タスク詳細画面では、締切、コメント一覧が表示される。
 
-<p>
-  <img src="./images/boards.index.png" width="30%" style="vertical-align: top;">
-  <img src="./images/tasks.index.png" width="30%" style="vertical-align: top;">
-  <img src="./images/task.show.png" width="30%" style="vertical-align: top;">
+<p style=vertical-align: top;">
+  <img src="./images/boards.index.png" width="33%">
+  <img src="./images/tasks.index.png" width="33%">
+  <img src="./images/task.show.png" width="33%">
 </p>
 
 
 ### ログイン画面
 
 <p>
-  <img src="./images/sign_in.png" width="30%" style="vertical-align: top;">
-  <img src="./images/sign_up.png" width="30%" style="vertical-align: top;">
+  <img src="./images/sign_up.png" width="33%" style="vertical-align: top;">
+  <img src="./images/sign_in.png" width="33%" style="vertical-align: top;">
 </p>
 
-### card作成画面
+### 作成画面
+- タスク作成画面では、画像の投稿、締切の設定ができる。
 
 <p>
-  <img src="./images/add_new_card.png" width="30%" style="vertical-align: top;">
-  <img src="./images/add_new_board.png" width="30%" style="vertical-align: top;">
-  <img src="./images/add_new_comment.png" width="30%" style="vertical-align: top;">
+  <img src="./images/add_new_board.png" width="33%" style="vertical-align: top;">
+  <img src="./images/add_new_card.png" width="33%" style="vertical-align: top;">
+  <img src="./images/add_new_comment.png" width="33%" style="vertical-align: top;">
 </p>
 
 
