@@ -1,7 +1,6 @@
 # README
 
-## 現在開発中です。
-2025年6月時点、ruby・railsのアップデートに伴うバグを修正中。
+## 完成済みのアプリです。
 
 ## タイトル
 シンプルなタスク管理アプリです。
@@ -26,17 +25,27 @@
 
 ### メイン画面
 
-![top](./images/top.png)
+<p>
+  <img src="./images/boards.index.png" width="30%" style="vertical-align: top;">
+  <img src="./images/tasks.index.png" width="30%" style="vertical-align: top;">
+  <img src="./images/task.show.png" width="30%" style="vertical-align: top;">
+</p>
+
 
 ### ログイン画面
 
-![sign in](./images/signin.png)
+<p>
+  <img src="./images/sign_in.png" width="30%" style="vertical-align: top;">
+  <img src="./images/sign_up.png" width="30%" style="vertical-align: top;">
+</p>
 
-### board作成画面
+### card作成画面
 
-![board](./images/board.png)
+<p>
+  <img src="./images/add_new_card.png" width="30%" style="vertical-align: top;">
+  <img src="./images/add_new_board.png" width="30%" style="vertical-align: top;">
+  <img src="./images/add_new_comment.png" width="30%" style="vertical-align: top;">
+</p>
 
-### task作成画面
 
-![task](./images/task.png)
 
