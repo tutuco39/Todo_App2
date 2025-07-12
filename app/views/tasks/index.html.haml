@@ -12,8 +12,10 @@
           = task.description
       .task_flex
         .task_flex_left
-          - if current_user.profile&.avatar&.attached?
+          - if task.user.profile&.avatar&.attached?
             = image_tag task.user.avatar_image, class: "avatar task_user_avatar"
+          - else
+            = image_tag 'default-avatar.png', class: "avatar"
           - task.comment_user_avatars.each_with_index do | avatar, index |
             = image_tag avatar, class: "avatar avatar_image", style: "left: #{index * 20 + 20 }px;"
         .task_flex_right

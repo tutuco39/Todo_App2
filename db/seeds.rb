@@ -22,28 +22,28 @@ tasks = Task.all
 #   )
 # end
 
-5.times do
-  Board.create!(
-    name: Faker::Lorem.sentence(word_count: 2),
-    description: Faker::Lorem.sentence(word_count: 4),
-    user_id: users.sample.id  # ランダムなユーザーと紐づけ
-  )
-end
+# 2.times do
+#   Board.create!(
+#     name: Faker::Lorem.sentence(word_count: 2),
+#     description: Faker::Lorem.sentence(word_count: 4),
+#     user_id: users.sample.id  # ランダムなユーザーと紐づけ
+#   )
+# end
 
-10.times do
-  Task.create!(
-    title: Faker::Lorem.sentence(word_count: 2),
-    description: Faker::Lorem.sentence(word_count: 25),
-    deadline: Faker::Date.forward(days: rand(1..30)),  # 1〜30日後のランダムな日付
-    user_id: users.sample.id,  # ランダムなユーザー
-    board_id: boards.sample.id  # ランダムなBoard
-  )
-end
+# 10.times do
+#   Task.create!(
+#     title: Faker::Lorem.sentence(word_count: 2),
+#     description: Faker::Lorem.sentence(word_count: 25),
+#     deadline: Faker::Date.forward(days: rand(1..30)),  # 1〜30日後のランダムな日付
+#     user_id: users.sample.id,  # ランダムなユーザー
+#     board_id: boards.sample.id  # ランダムなBoard
+#   )
+# end
 
-20.times do
-  Comment.create!(
-    content: Faker::Lorem.sentence(word_count: 10),
-    user_id: users.sample.id,  # ランダムなユーザーID
-    task_id: tasks.sample.id  # ランダムなTask ID
-  )
-end
+# 50.times do
+#   Comment.create!(
+#     content: Faker::Lorem.sentence(word_count: 10),
+#     user_id: users.sample.id,  # ランダムなユーザーID
+#     task_id: tasks.sample.id  # ランダムなTask ID
+#   )
+# end
