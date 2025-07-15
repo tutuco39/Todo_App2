@@ -35,14 +35,24 @@ class Task < ApplicationRecord
     comments.count
   end
 
+  # def comment_user_avatars
+  #   # task.user以外のコメントしたユーザーのavatarを取得
+  #   comments.map do |comment|
+  #     comments.map(&:user_id)
+  #     comment_user = comment.user
+  #       if comment_user != self.user && comment_user.profile&.avatar&.attached?
+  #         comment_user.profile.avatar
+  #       end
+  #   end.compact  # nilの要素を取り除く
+  # end
+
   def comment_user_avatars
-    # task.user以外のコメントしたユーザーのavatarを取得
-    comments.map do |comment|
-      comment_user = comment.user
-      if comment_user != self.user && comment_user.profile&.avatar&.attached?
-        comment_user.profile.avatar
-      end
-    end.compact  # nilの要素を取り除く
+    comments.map(&:user).uniq.select do |comment_user|
+      comment_user != self.user && comment_user.profile&.avatar&.attached?
+    end.map do |comment_user|
+      comment_user.profile.avatar
+    end
   end
+  
 
 end
