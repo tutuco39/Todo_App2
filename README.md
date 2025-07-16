@@ -39,9 +39,9 @@
 - アバター未設定の場合、デフォルトのアバターが表示される。 
 
 <div style="display: flex; vertical-align: top;">
-  <img src="./images/boards.index.png" width="33%">
-  <img src="./images/tasks.index.png" width="33%">
-  <img src="./images/task.show.png" width="33%">
+  <img src="./images/boards.index.png" width="30%">
+  <img src="./images/tasks.index.png" width="30%">
+  <img src="./images/task.show.png" width="30%">
 </div>
 
 
@@ -58,9 +58,9 @@
 - タスク作成画面では、画像の投稿、締切の設定ができる。
 
 <div style="display: flex; align-items: flex-start;">
-  <img src="./images/add_new_board.png" width="33%">
-  <img src="./images/add_new_card.png" width="33%">
-  <img src="./images/add_new_comment.png" width="33%">
+  <img src="./images/add_new_board.png" width="30%">
+  <img src="./images/add_new_card.png" width="30%">
+  <img src="./images/add_new_comment.png" width="30%">
 </div>
 
 
